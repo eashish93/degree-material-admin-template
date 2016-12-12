@@ -1,0 +1,29 @@
+<div class="page page-ui-tabs" ng-controller="IconsDemoCtrl">
+
+    <div layout-gt-sm="column">
+
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Ionicons</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+
+                <md-card-content>
+                    <md-input-container class="md-block">
+                        <label>Search Icons</label>
+                        <input ng-model="iconKeywords" type="search" placeholder="Type keywords: android, ios" ng-keyup="iconSearch()">
+                    </md-input-container>
+                    <div  layout-padding layout="row" layout-wrap>
+                        <div ng-repeat="icon in filteredIcons" flex-gt-sm="33">
+							<md-icon class="{{icon}} md-title" style="position: relative; top: -3px; color: #212121"></md-icon>
+							{{icon}}
+                        </div>
+                    </div>
+
+                </md-card-content>
+            </md-card>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.page-calendar {
+    .calendar-toolbar {
+        margin-bottom: .6rem;
+    }
+
+    .event-box .event-colors li {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .event-box {
+        position: relative;
+    }
+    .event-box .event-colors {
+        float: right;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .event-remove-icon {
+        position: absolute;
+        top: 14px; right: 14px;
+    }
+
+}

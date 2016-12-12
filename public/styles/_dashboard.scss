@@ -1,0 +1,88 @@
+.page-dashboard {
+
+    .today-stats {
+        background: $md-grey-100;
+        margin: -1rem;
+        border-bottom: 1px solid $md-grey-200;
+        padding: 1rem;
+        margin-bottom: .8rem;
+        > h3 {
+            border-bottom: 1px solid $md-grey-300;
+            padding-bottom: .6rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .stats-wrapper {
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-left: .5rem;
+            margin-right: .5rem;
+        }
+
+        .stats .val {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        .chart-trends {
+            margin-top: 1rem;
+            margin-left: 1rem;
+
+        }
+    }
+
+    // browser
+    #c3chartbrowsershare {
+        svg text {
+            font-size: .75rem;
+        }
+    }
+
+    // dashboard activities
+    .dashboard-activities {
+        ul {list-style:none; padding: 0; margin-left: 5px; }
+		ul li {position: relative; padding: 3px 0 3px 30px;}
+		ul li:before {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 1px;
+			left: 5px;
+		}
+		ul li .point {
+			width: 9px; height: 9px;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 8px;
+			border-radius: 100%;
+			border: 1px solid transparent;
+		}
+        ul li .time {
+            color: $md-grey-800;
+        }
+        ul li p {
+            margin-top: 2px;
+        }
+		ul li {
+			&.primary:before {background: $md-indigo-500}
+			&.primary .point {background: $md-indigo-500; border-color: $md-indigo-500}
+
+			&.success:before {background: $md-green-500}
+			&.success .point {background:$md-green-500; border-color: $md-green-500}
+
+			&.warning:before {background: $md-amber-500}
+			&.warning .point {background: $md-amber-500; border-color: $md-amber-500}
+
+			&.info:before {background: $md-blue-500}
+			&.info .point {background: $md-blue-500; border-color: $md-blue-500}
+
+			&.danger:before {background: $md-red-500}
+			&.danger .point {background: $md-red-500; border-color: $md-red-500}
+
+		}
+	}
+}

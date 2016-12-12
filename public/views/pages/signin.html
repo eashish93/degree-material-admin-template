@@ -1,0 +1,38 @@
+<div class="page page-signin" layout-gt-xs="row" layout-align="center center">
+    <md-card flex-gt-sm="35" flex-sm="50" layout-padding layout-margin>
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-headline text-uppercase text-bolder">Degree</span>
+                <span class="md-subhead">Sign in to Dashboard</span>
+            </md-card-header-text>
+        </md-card-header>
+
+
+        <md-card-content>
+            <form name="loginForm">
+                <md-input-container class="md-block">
+                    <label>Email Address</label>
+                    <input type="email" ng-model="login.email" name="email" placeholder="example@xyz.com" required ng-pattern="/^.+@.+\..+$/"/>
+
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input type="password"  ng-model="login.pass" name="password" placeholder="........" required ng-minlength="8" style="margin-bottom: 2px"/>
+                    <div class="md-caption" style="text-align: right;"><a href="#/pages/forget-pass">Forget Password?</a></div>
+                </md-input-container>
+                <div layout layout-align="end center">
+                    <md-button class="md-raised md-primary" flex href="#/dashboard">Sign In</md-button>
+                </div>
+
+
+            </form>
+        </md-card-content>
+
+        <md-footer class="text-center">
+            <div class="md-caption">Don't have an account?&nbsp;<a href="#/pages/register">Create One</a></div>
+        </md-footer>
+
+    </md-card>
+
+</div>

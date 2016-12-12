@@ -1,0 +1,41 @@
+{
+  "name": "degree",
+  "version": "1.0.0",
+  "description": "Material Admin Template",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "eashish93",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-loading-bar": "^0.9.0",
+    "angular-material": "^1.1.0",
+    "angular-material-data-table": "^0.10.9",
+    "angular-messages": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-trix": "^1.0.2",
+    "c3": "^0.4.11",
+    "d3": "^4.2.8",
+    "fullcalendar": "^3.0.1",
+    "ionicons": "^3.0.0",
+    "jquery": "^3.1.0",
+    "moment": "^2.16.0",
+    "ng-flow": "^2.1.4",
+    "oclazyload": "^1.0.9",
+    "trix": "^0.9.9"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}

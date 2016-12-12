@@ -1,0 +1,276 @@
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    letter-spacing:1.1px;
+    color: $md-font-primary;
+    font-size: 14px!important;
+    line-height: 1.5!important;
+    overflow-x: hidden;
+}
+
+.app.body-full {
+    background: $md-blue-grey-700;
+    .md-sidenav-left {display: none!important;}
+    .content-wrapper .site-head {display: none!important;}
+    .main-content {
+        margin: 0; padding: 0;
+    }
+    .page {
+        height: 100%;
+    }
+
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100vh; /* used only inner scrollbar. */
+}
+
+.main-content {
+    width: 100%;
+    position: relative;
+    overflow: auto;
+    // z-index: 990;
+    overflow-x: hidden;
+    margin-top: $site-toolbar-height;
+
+}
+
+*:focus {
+    outline: none!important;
+}
+
+.ion:before, .ionicons:before {
+}
+a {
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    color: $md-indigo-a700;
+}
+
+md-toolbar .md-toolbar-tools {
+    letter-spacing: 1px;
+}
+
+.md-button md-icon {
+    color: $md-font-primary;
+}
+
+input:focus {
+    outline: none;
+}
+
+// standard bg colors
+.bg-primary, .bg-info, .bg-danger, .bg-warning, .bg-success {
+    color: #fff!important;
+}
+.bg-primary {background: $md-indigo-500!important;}
+.bg-info {background: $md-blue-500!important}
+.bg-danger {background: $md-red-500!important;}
+.bg-warning {background: $md-yellow-500!important;}
+.bg-success {background: $md-green-500!important;}
+
+// cards
+// -----
+
+md-card {
+    box-shadow: 0 1px 2px rgba(0,0,0,.15), 1px 0 2px rgba(0,0,0,.05), 1px 0 0 rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+}
+md-card-title {
+    padding-top: 1rem!important;
+}
+
+// Typography
+// ---------
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+h1, h2, h3 {
+    margin-top: .8rem; margin-bottom: .8rem;
+}
+
+.md-display-4 { font-size: 64px; margin-top: 1rem; margin-bottom: 1rem;}
+.md-display-3 { font-size: 48px; margin-top: 1rem; margin-bottom: 1rem;}
+.md-display-2 { font-size: 36px; margin-top: 1rem; margin-bottom: 1rem;}
+.md-display-1 { font-size: 28px; margin-top: 1rem; margin-bottom: 1rem;}
+
+.md-title, .md-lead {
+    margin: 0!important; padding: 0!important;
+    font-weight: 400;
+}
+.md-lead {
+    font-size: 20px;
+}
+.md-subhead {
+    padding: 0!important;
+}
+md-divider {
+    margin-top: .4rem;
+}
+.md-highlight {
+    background:$md-blue-grey-200;
+}
+kbd {
+    background: $md-blue-grey-900;
+    color: $md-white;
+}
+.list-unstyled {
+    list-style: none;
+}
+
+.blockquote-reverse {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid $md-grey-300;
+  border-left: 0;
+  text-align: right;
+
+}
+
+blockquote {
+  padding: 1rem;
+  font-size: 17px;
+  margin: 0 0 1.4rem;
+  border-left: 5px solid $md-grey-300;
+  p {
+      margin-top: 0;
+      padding-top: 0;
+  }
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+
+    }
+  }
+  footer{
+    display: block;
+    font-size: 80%; // back to default font-size
+    line-height: 1;
+    color: $md-grey-600;
+
+    &:before {
+      content: '\2014 \00A0'; // em dash, nbsp
+    }
+  }
+
+}
+// additional type classes
+.text-uppercase { text-transform: uppercase; }
+.text-bold {font-weight: 500}
+.text-bolder {font-weight: 700}
+.text-lowercase {text-transform: lowercase}
+.text-light {font-weight: 300}
+.text-normal {font-weight: 400}
+.text-center {text-align: center}
+
+.filler {
+    display: block;
+    height: 7px;
+    background: $md-grey-200;
+}
+.filler-sm {
+    height: 5px!important;
+}
+.filler-xs {
+    height: 2px!important;
+}
+
+
+// Buttons
+// --------
+.md-button {
+    padding: 0rem .6rem;
+    [class^=ion] {
+        line-height: 1.14;
+    }
+    &.md-small {
+        font-size: 12px;
+        min-height: 1.9rem;
+        min-width: 4rem;
+        padding: 0 .5rem;
+        line-height: 1.2;
+        [class^=ion] {
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+    }
+    &.md-large {
+        font-size: 1.2rem;
+        min-height: 2.8rem;
+        min-width: 5.5rem;
+        line-height: 1.4;
+    }
+}
+
+.md-button.md-fab {
+    [class^=ion] {
+        font-size: 32px;
+        position: relative;
+        top: -5px;
+
+    }
+    &.md-mini {
+        [class^=ion] {
+            font-size: 20px;
+            top: 2px;
+            left: -1px;
+        }
+    }
+    &.md-xs {
+        min-height: 1rem;
+        height: 1.8rem; width: 1.8rem;
+        min-width: 1rem;
+        line-height: 1.8rem;
+        [class^=ion] {
+            font-size: 14px;
+            left:-7.5px;
+            top:4.5px;
+
+        }
+    }
+}
+.md-button-group {
+    margin-left: 5px; margin-right: 5px;
+    .md-button {
+        margin-left: 0; margin-right: 0;
+
+    }
+}
+
+
+// Inputs
+// ------
+md-input-container {
+    > md-icon {
+        font-size: 25px;
+        margin-top: -6px;
+    }
+}
+
+
+// pagination
+.md-pagination {
+    list-style: none;
+    border: 1px solid $md-grey-300;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    display: inline-flex;
+    padding: 0;
+    li > a {
+        display: inline-block;
+        padding: .6rem 1rem;
+        color: $md-blue-a700;
+        &:hover { color: $md-blue-grey-800;}
+    }
+    li > .dots {
+        display: inline-block;
+        margin-top: .5rem;
+        font-weight: 600;
+        color: $md-blue-a700;
+    }
+    li > a.selected {
+        background: $md-blue-a700;
+        color: #fff;
+    }
+}

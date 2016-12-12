@@ -1,0 +1,179 @@
+<div class="page page-ui-buttons">
+
+    <div layout-gt-sm="row">
+        <div flex-gt-sm="100">
+            <!-- colors -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Colors</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <md-button>Flat</md-button>
+                    <md-button class="md-raised">Default</md-button>
+                    <md-button class="md-primary md-raised">Primary</md-button>
+                    <md-button class="md-warn md-raised">Warning</md-button>
+                    <md-button class="md-accent md-raised">Accent</md-button>
+                    <md-button class="md-raised" ng-disabled="true">Disabled</md-button>
+                    <md-button class="md-raised md-primary md-hue-1">Hue-Primary</md-button>
+                    <md-button class="md-raised md-warn md-hue-1">Hue-Warn</md-button>
+                    <md-button class="md-accent md-hue-1 md-raised">Hue-Accent</md-button>
+                    <div layout-margin>With custom material colors</div>
+                    <md-divider layout-margin></md-divider>
+                    <md-button class="md-raised" md-colors="{background: 'green-500'}">Custom</md-button>
+                    <md-button class="md-raised" md-colors="{background: 'brown-500'}">Custom 2</md-button>
+                    <md-button class="md-raised" md-colors="{background: 'yellow-500'}">Custom 3</md-button>
+                    <md-button class="md-raised" md-colors="{background: 'lime-500'}">Custom 4</md-button>
+                </md-card-content>
+            </md-card>
+
+            <!-- sizes -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Sizes</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <md-button class="md-primary md-raised md-small">Small</md-button>
+                    <md-button class="md-primary md-raised">Normal</md-button>
+                    <md-button class="md-primary md-raised md-large">Large</md-button>
+                    <md-button class="md-fab md-warn" aria-label="Use Android">
+                      <md-icon class="ion-logo-android"></md-icon>
+                    </md-button>
+                    <md-button class="md-fab md-primary md-mini" aria-label="Use Github">
+                      <md-icon class="ion-logo-github"></md-icon>
+                    </md-button>
+                </md-card-content>
+            </md-card>
+            <!-- social buttons -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Socials</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'indigo-500'}">
+                        <md-icon class="ion-logo-facebook md-title" style="color: #fff"></md-icon>
+                    </md-button>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'blue-400'}">
+                        <md-icon class="ion-logo-twitter md-title" style="color: #fff"></md-icon>
+                    </md-button>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'light-blue-800'}">
+                        <md-icon class="ion-logo-linkedin md-title" style="color: #fff"></md-icon>
+                    </md-button>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'red-600'}">
+                        <md-icon class="ion-logo-googleplus md-title" style="color: #fff"></md-icon>
+                    </md-button>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'green-500'}">
+                        <md-icon class="ion-logo-whatsapp md-title" style="color: #fff"></md-icon>
+                    </md-button>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'yellow-A200'}">
+                        <md-icon class="ion-logo-snapchat md-title" ></md-icon>
+                    </md-button>
+                    <md-button class="md-raised md-icon-button" md-colors="{background: 'red-900'}">
+                        <md-icon class="ion-logo-youtube md-title" style="color: #fff"></md-icon>
+                    </md-button>
+                </md-card-content>
+            </md-card>
+
+            <!-- button groups -->
+
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Button Groups</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <div class="md-button-group" flex-gt-sm="50">
+                        <md-button class="md-raised">Apple</md-button>
+                        <md-button class="md-raised">Samsung</md-button>
+                        <md-button class="md-raised">Google</md-button>
+                        <md-button class="md-raised">Facebook</md-button>
+                    </div>
+                </md-card-content>
+            </md-card>
+
+            <!-- fab speed dial -->
+            <md-card ng-controller="FabSpeedDialCtrl">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Fab Speed Dial</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content style="min-height: 300px;" ng-cloak>
+                    <md-fab-speed-dial md-direction="{{selectedDirection}}" md-open="isOpen" ng-class="selectedAnimation">
+                        <!-- trigger -->
+                        <md-fab-trigger>
+                            <md-button class="md-accent md-fab"><md-icon class="ion-md-menu"></md-icon></md-button>
+                        </md-fab-trigger>
+
+                        <!-- fab actions -->
+                        <md-fab-actions>
+                            <md-button class="md-raised md-fab md-mini" md-colors="{background: 'blue-400'}">
+                                <md-icon class="ion-logo-twitter" style="color: #fff"></md-icon>
+                            </md-button>
+                            <md-button class="md-raised md-fab md-mini" md-colors="{background: 'light-blue-800'}">
+                                <md-icon class="ion-logo-linkedin" style="color: #fff"></md-icon>
+                            </md-button>
+                            <md-button class="md-raised md-fab md-mini" md-colors="{background: 'red-600'}">
+                                <md-icon class="ion-logo-googleplus" style="color: #fff"></md-icon>
+                            </md-button>
+                        </md-fab-actions>
+                    </md-fab-speed-dial>
+
+                    <!-- configuration -->
+                    <div layout-margin class="md-body-1">Custom Configurations</div>
+                    <md-divider layout-margin></md-divider>
+                    <div layout="row" layout-align="space-around">
+                        <div layout="column" layout-align="start center">
+                             <b>Direction</b>
+                            <md-radio-group ng-model="selectedDirection">
+                              <md-radio-button ng-repeat="direction in directions"
+                                               ng-value="direction" class="text-capitalize">
+                                {{direction}}
+                              </md-radio-button>
+                            </md-radio-group>
+
+                        </div>
+
+                        <div layout="column" layout-align="start center">
+                            <b>Open/Closed</b>
+                            <md-checkbox ng-model="isOpen">Open</md-checkbox>
+                        </div>
+
+                        <div layout="column" layout-align="start center">
+                            <b>Animation Modes</b>
+
+                            <md-radio-group ng-model="selectedAnimation">
+                                <md-radio-button ng-repeat="mode in animations" ng-value="mode">
+                                    {{mode}}
+                                </md-radio-button>
+                            </md-radio-group>
+                        </div>
+                    </div>
+
+                </md-card-content>
+
+            </md-card>
+
+
+
+        </div>
+
+    </div>
+
+</div>

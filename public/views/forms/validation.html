@@ -1,0 +1,156 @@
+<div class="page page-forms-validation" ng-controller="FormValidationDemo">
+
+    <!-- card colors -->
+    <div layout-gt-sm="row">
+
+        <div flex-gt-sm="50">
+            <!-- login form -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Login Form</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <form name="loginForm">
+                        <div><strong class="text-bold">Enter your email and password to continue.</strong></div>
+                        <br />
+                        <md-input-container class="md-block">
+                            <label>Email Address</label>
+                            <input type="email" ng-model="validDemo.email" name="email" placeholder="example@xyz.com" required ng-pattern="/^.+@.+\..+$/"/>
+                            <div ng-messages="loginForm.email.$error">
+                                <div ng-message-exp="['required', 'pattern']">Must be a valid email address.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <input type="password" ng-model="validDemo.pass" name="password" required ng-minlength="8"/>
+                            <div ng-messages="loginForm.password.$error">
+                                <div ng-message-exp="['required', 'minlength']">Required password must be greater than 8 digit.</div>
+                            </div>
+                        </md-input-container>
+                        <div layout-align="space-between center" layout="row">
+                            <md-checkbox flex="66">Stay signed in</md-checkbox>
+                            <md-button class="md-raised md-primary" flex="33">Sign In</md-button>
+                        </div>
+                    </form>
+
+                </md-card-content>
+            </md-card>
+
+            <!-- native validation -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Native Validation</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <form name="nativeForm">
+                        <md-input-container class="md-block">
+                            <label>Alphanum</label>
+                            <input type="tel" ng-pattern="/^\w+$/" name="alphanum" ng-model="validDemo.alphanum" placeholder="alphanumeric string only" required>
+                            <div ng-messages="nativeForm.alphanum.$error">
+                                <div ng-message-exp="['required', 'pattern']">Must be a valid alphanumeric string only</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Email</label>
+                            <input type="email" placeholder="john@doe.com" name="email" ng-model="validDemo.email" required>
+                            <div ng-messages="nativeForm.email.$error">
+                                <div ng-message="required">Must be a valid email address</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Url</label>
+                            <input type="url" placeholder="http://example.com" name="url" ng-model="validDemo.url" required>
+                            <div ng-messages="nativeForm.url.$error">
+                                <div ng-message="required">Must be a valid url</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Date</label>
+                            <input type="date" placeholder="yyyy-mm-dd" name="date" ng-model="validDemo.date" required>
+                            <div ng-messages="nativeForm.date.$error">
+                                <div ng-message="required">Must be a valid date</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Number</label>
+                            <input type="number" min="0" max="99" name="num" ng-model="validDemo.num" required>
+                            <div ng-messages="nativeForm.num.$error">
+                                <div ng-message-exp="['min', 'max']">Number must be between 0 to 99</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Range</label>
+                            <input type="text" class="form-control" name="range" ng-maxlength="10" ng-minlength="4" ng-model="validDemo.rangelength" placeholder="min=4 max= 10" required>
+                            <div ng-messages="nativeForm.range.$error">
+                                <div ng-message-exp="['minlength', 'maxlength']">Range must be between 4 - 10</div>
+                            </div>
+                        </md-input-container>
+                    </form>
+                </md-card-content>
+
+            </md-card>
+        </div>
+
+        <div flex-gt-sm="50">
+            <!-- regex validation -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Regex Validation</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <form name="regexForm">
+                        <md-input-container class="md-block">
+                            <label>Phone No</label>
+                            <input type="tel" ng-pattern="/\d{2}-\d{5}-\d{2}$/" name="phone" ng-model="validDemo.phone" placeholder="xx-xxxxx-xx" required>
+                            <div ng-messages="regexForm.phone.$error">
+                                <div ng-message-exp="['required', 'pattern']">Must be a valid phone no.</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Hex Color</label>
+                            <input type="tel" ng-pattern="/\d{2}-\d{5}-\d{2}$/" name="hexcolor" ng-model="validDemo.hexcolor" placeholder="eg: #000000 or #abe" required>
+                            <div ng-messages="regexForm.hexcolor.$error">
+                                <div ng-message-exp="['required', 'pattern']">Must be a valid hex color.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Visa Card</label>
+                            <input type="text" ng-pattern="/^4[0-9]{12}(?:[0-9]{3})?$/" ng-model="validDemo.visa" placeholder="visa card (16 digits start with 4)" required>
+                            <div ng-messages="regexForm.visa.$error">
+                                <div ng-message-exp="['required', 'pattern']">Must be a valid visa card no.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>IP Address (v4)</label>
+                            <input type="text" ng-pattern="/\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}\b/" ng-model="validDemo.ipv4" placeholder="eg: 192.168.1.1" required>
+                            <div ng-messages="regexForm.ipv4.$error">
+                                <div ng-message-exp="['required', 'pattern']">Must be a valid ip address</div>
+                            </div>
+                        </md-input-container>
+
+                    </form>
+
+
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>

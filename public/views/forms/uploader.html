@@ -1,0 +1,68 @@
+<div class="page page-forms-uploader">
+
+    <div layout-gt-sm="column" layout-padding flow-init flow-files-submitted="$flow.upload()">
+
+            <div md-whiteframe="1" layout-margin class="md-caption" style="padding: .7rem" md-colors="{background: 'blue-100', color: 'blue-900'}">
+                <strong>NOTE:</strong> This is just an example of plugin flow.js. No files are actually uploaded.
+            </div>
+            <br />
+
+            <div flex-gt-sm="100">
+                <div class="dropzone" flow-drop flow-btn style="background: #fff; border: 2px dotted #e2e2e2; text-align: center">
+                    <!-- <span class="btn btn-default btn-sm" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folders</span> -->
+                    <div class="drop-info" style="height: 250px; padding: 1rem">
+                        <i class="ion-ios-cloud-upload" style="font-size: 8rem; height: 140px; display: block;"></i>
+                        <h2>Dropzone</h2>
+                        <p>Drag files to upload <strong class="text-muted">(or click)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div flex-gt-sm="100">
+                <md-card>
+                    <md-table-container>
+                        <table md-table>
+                            <thead md-head>
+                                <tr md-row>
+                                    <th md-column>Name</th>
+                                    <th md-column>Size</th>
+                                    <th md-column>Progress</th>
+                                    <th md-column>Status</th>
+                                    <th md-column>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody md-body>
+                                <tr md-row ng-repeat="file in $flow.files">
+                                    <td md-cell class="text-bold">{{file.relativePath}}</td>
+                                    <td md-cell class="small">{{file.size | number: 0}} B</td>
+                                    <td md-cell>
+                                        <md-progress-linear md-mode="determinate" value="file.progress()*100" ng-class="{active: file.isUploading()}"></md-progress-linear>
+                                    </td>
+                                    <td md-cell class="text-center">
+                                        <span class="ion ion-checkmark-circled text-success" ng-show="file.isComplete()"></span>
+                                    </td>
+                                    <td md-cell>
+                                        <md-button class="md-fab md-xs md-accent" ng-click="file.cancel()">
+                                          <md-icon class="ion-ios-trash"></md-icon>
+                                        </md-button>
+                                        <md-button class="md-fab md-xs md-warn" ng-click="file.pause()">
+                                          <md-icon class="ion-ios-pause"></md-icon>
+                                        </md-button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
+                    <!-- resume all, pause all, cancel all button -->
+
+                </md-card>
+                <div layout="row">
+                    <md-button class="md-raised md-primary md-small" ng-click="$flow.resume()">Resume All</md-button>
+                    <md-button class="md-raised md-warn md-small" ng-click="$flow.pause()">Pause All</md-button>
+                    <md-button class="md-raised md-small" md-colors="{background: 'red-700'}"ng-click="$flow.cancel()">Cancel All</md-button>
+                </div>
+
+            </div>
+    </div>
+
+</div>

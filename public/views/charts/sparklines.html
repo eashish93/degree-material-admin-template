@@ -1,0 +1,129 @@
+<div class="page page-charts-sparklines">
+
+    <div layout-gt-sm="row">
+        <md-card flex-gt-sm="50">
+            <md-card-content>
+                <h1 class="text-uppercase">Sparkline</h1>
+                <p>Inline chart library with angularjs binding. Use with <code>sparkline</code> directive along with same sparkline options. Here's one of the example and the most common examples are given below. All code directly in html.</p>
+                <p><code class="md-highlight">&lt;span sparkline type="pie"&gt;1,2,1&lt;/span&gt;</code>&nbsp; <span sparkline width="1.5em" height="1.5em" type="pie">1,2,1</span></p>
+                <md-button href="http://omnipotent.net/jquery.sparkline" class="md-raised md-accent" target="_blank">See Doc</md-button>
+            </md-card-content>
+
+        </md-card>
+
+        <md-card flex-gt-sm="50">
+            <md-card-content>
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column>Chart</th>
+                                <th md-column>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row>
+                                <td md-cell><span sparkline line-color="red">8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10</span></td>
+                                <td md-cell>Inline line graphs</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell>
+                                    <span sparkline type="bar">10,8,9,3,5,8,5</span>&nbsp;
+                                    <span sparkline type="bar">-3,1,2,0,3,-1</span>&nbsp;
+                                    <span sparkline type="bar">[0, 2], [2, 4], [4, 2], [4, 1]</span>
+                                </td>
+                                <td md-cell>Bar graphs with negative and stacked</td>
+                            </tr>
+
+                            <tr md-row>
+                                <td md-cell>
+                                    <span sparkline type="pie" slice-colors="[#e88,#dd4477,#0099c6]">5, 4, 2</span>&nbsp;
+                                    <span sparkline type="pie" slice-colors="[#4CAF50,#eee]">5, 3</span>
+                                </td>
+                                <td md-cell>Pie graphs</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell>
+                                    <span sparkline type="discrete" line-color="#e02828">4,6,7,7,4,3,2,1,4,4,5,7,3,1,5</span>
+                                </td>
+                                <td md-cell>Discrete graph</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell><span sparkline type="bullet">10,12,12,9,7</span>
+                                <td md-cell>Bullet graph</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </md-table-container>
+
+            </md-card-content>
+
+        </md-card>
+    </div>
+
+
+    <div layout-gt-sm="row" layout-align="center center">
+
+        <md-card flex-gt-sm="25">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase">Large Pie Chart</span>
+                    <md-divider></md-divider>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content style="text-align: center">
+                <span sparkline type="pie" slice-colors="[#4CAF50,#38B4EE,#eee]" width="8em" height="8em">3, 4, 2</span>
+            </md-card-content>
+
+        </md-card>
+
+        <md-card flex-gt-sm="25">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase">Large Line Chart</span>
+                    <md-divider></md-divider>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content style="text-align: center">
+                <span sparkline type="line" width="8em" height="8em" fill-color="transparent" line-color="#4CAF50">8,4,0,0,0,0,1,4,4,10,10,0,0,0,4,6,5,9,10</span>
+            </md-card-content>
+
+        </md-card>
+
+        <md-card flex-gt-sm="25">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase">Large Bar Chart</span>
+                    <md-divider></md-divider>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content style="text-align: center">
+                <span sparkline type="bar" width="8em" height="8em" bar-color="#4CAF50">8,4,0,0,0,0,1,4,4,10,10,0,0,0,4,6,5,9,10</span>
+            </md-card-content>
+
+        </md-card>
+
+        <md-card flex-gt-sm="25">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase">Large Bar Chart</span>
+                    <md-divider></md-divider>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content style="text-align: center">
+                <span sparkline type="box" box-fill-color="#4CAF50" width="8em" height="8em">4,27,34,52,54,59,61,68,78,82,85,87,91,93,100 </span>
+            </md-card-content>
+        </md-card>
+
+
+
+    </div>
+
+
+
+</div>

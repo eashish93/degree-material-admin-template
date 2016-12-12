@@ -1,0 +1,61 @@
+<div class="page page-ui-modals" ng-controller="ModalsCtrl">
+
+    <div layout-gt-sm="row">
+        <div flex-gt-sm="100">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Material Dialogs</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <!-- dialog markup starts here -->
+                    <!-- simple dialog static -->
+                    <p class="inset">These are the dialogs made with angular material. Press <code>Esc</code> or click outside to close the dialog.</p>
+                    <md-button class="md-raised md-primary" ng-click="showAlert()">Alert Dialog</md-button>
+                    <md-button class="md-raised md-primary" ng-click="showPrompt()">Prompt Dialog</md-button>
+                    <md-button class="md-raised md-primary" ng-click="showCustom()">Custom Dialog</md-button>
+                    <p class="inset"><strong>{{promptstatus}}</strong></p>
+                </md-card-content>
+            </md-card>
+
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Bottom Sheets</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <p class="inset">Though not a dialog, but can be consider as an alternative to dialog. This is useful to short content such as lists or inline navigation.</p>
+                    <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center" >
+                        <md-button flex="100" class="md-primary md-raised" ng-click="showListBottomSheet()">Show as List</md-button>
+                     </div>
+                </md-card-content>
+            </md-card>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- bottom sheet list example -->
+<script type="text/ng-template" id="bottomSheetList.html">
+    <md-bottom-sheet class="md-list md-has-header" style="bottom: 80px">
+        <md-subheader>Social Buttons</md-subheader>
+        <md-list>
+            <md-list-item ng-repeat="item in bottomListItems">
+            <md-button ng-click="listItemClick($index)" md-autofocus="$index == 2" class="md-list-item-content" >
+                <md-icon class="{{item.icon}} md-title" style="position: relative; top: -8px"></md-icon>
+                <span class="md-inline-list-icon-label">{{ item.name }}</span>
+            </md-button>
+
+        </md-list-item>
+    </md-list>
+</md-bottom-sheet>
+</script>

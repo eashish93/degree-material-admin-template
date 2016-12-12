@@ -1,0 +1,310 @@
+<div class="page page-forms-elements" ng-controller="FormElementsDemo">
+
+    <!-- card colors -->
+    <div layout-gt-sm="column">
+
+        <div flex-gt-sm="100">
+
+            <!-- input controls -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Input Controls</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <div layout-gt-sm="row" layout-margin>
+                        <!-- floating label -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Floating (Name)</label>
+                            <input type="text"/>
+                        </md-input-container>
+                        <!-- long floating label -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Long label which will automatically truncated with ellipses at the end.</label>
+                            <input type="text"/>
+                        </md-input-container>
+                    </div>
+                    <div layout-gt-sm="row" layout-margin>
+                        <!-- input with label (no float)-->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Address</label>
+                            <input type="text" ng-model="inputdemo.address" />
+                        </md-input-container>
+                        <!-- disabled input -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Skills (Disabled)</label>
+                            <input type="text" ng-model="inputdemo.skills" disabled />
+                        </md-input-container>
+                    </div>
+
+                    <!-- textarea (no resize) -->
+                    <md-input-container class="md-block" layout-margin md-no-resize="true">
+                        <label>TextArea</label>
+                        <textarea ng-model="inputdemo.textarea" md-maxlength="100" rows="5" md-select-on-focus></textarea>
+                    </md-input-container>
+
+                    <div layout-gt-sm="row" layout-margin>
+                        <!-- single select -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Single Select</label>
+                            <md-select ng-model="inputdemo.state">
+                                <md-option ng-repeat="state in inputdemo.states" value="{{state.abbrev}}">
+                                    {{state.abbrev}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <!-- multiple select -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Multiple Select</label>
+                            <md-select ng-model="inputdemo.selectedToppings" multiple>
+                                <md-optgroup label="Meats">
+                                    <md-option ng-value="topping.name" ng-repeat="topping in inputdemo.toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+                                </md-optgroup>
+                                <md-optgroup label="Veggies">
+                                    <md-option ng-value="topping.name" ng-repeat="topping in inputdemo.toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+
+                    </div>
+                    <br />
+
+                    <!-- input with icons -->
+                    <div layout-gt-sm="row" layout-margin>
+                        <md-input-container class="md-block md-icon-float" flex-gt-sm>
+                            <label>Input's Icon</label>
+                            <md-icon class="ion-ios-contact"></md-icon>
+                            <input type="text" ng-model="inputdemo.name" />
+                        </md-input-container>
+                    </div>
+
+                    <div layout-gt-sm="row" layout-margin>
+                        <md-input-container class="md-icon-float md-icon-right md-block" flex-gt-sm>
+                            <label>Donation Amount</label>
+                            <md-icon class="ion-ios-cash"></md-icon>
+                            <input ng-model="inputdemo.donation" type="number" step="0.01">
+                            <md-icon class="ion-logo-usd"></md-icon>
+                        </md-input-container>
+                    </div>
+
+                    <!-- chips -->
+                    <div layout-margin>
+                        <strong class="text-bold">With custom chip template</strong>
+                        <md-chips ng-model="chips.roFruitNames" name="fruitName" md-removable="true" md-max-chips="5" layout-margin>
+
+                            <md-chip-template>
+                                <strong>{{$chip}}</strong>
+                                <small>(fruit)</small>
+                            </md-chip-template>
+                        </md-chips>
+                        <br />
+                        <strong class="text-bold">Static Chips</strong>
+                        <md-chips>
+                            <md-chip>Hockey</md-chip>
+                            <md-chip>Lacrosse</md-chip>
+                            <md-chip>Baseball</md-chip>
+                        </md-chips>
+                        <br />
+                        <!-- contact chips -->
+                        <strong class="text-bold">Contact Chips</strong>
+                        <div ng-controller="ContactChipsDemoCtrl as ctrl">
+                            <md-contact-chips
+                                ng-model="ctrl.contacts"
+                                md-contacts="ctrl.querySearch($query)"
+                                md-contact-name="name"
+                                md-contact-image="image"
+                                md-contact-email="email"
+                                md-require-match="true"
+                                md-highlight-flags="i"
+                                filter-selected="ctrl.filterSelected"
+                                placeholder="To">
+
+                            </md-contact-chips>
+                        </div>
+                        <br />
+                    </div> <!-- end chips -->
+
+
+                    <!-- datepickers -->
+                    <div layout-gt-sm="row" layout-margin layout-wrap>
+                        <div flex-gt-sm>
+                            <div><strong class="text-bold">Standard Date Picker</strong></div>
+                            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                        </div>
+
+                        <div flex-gt-sm>
+                            <div><strong class="text-bold">Disabled Date picker</strong></div>
+                             <md-datepicker ng-model="myDate" md-placeholder="Enter date" disabled></md-datepicker>
+                        </div>
+
+                        <div flex-gt-sm>
+                            <div><strong class="text-bold">With min and max date</strong></div>
+                            <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                        </div>
+
+                        <div flex-gt-sm>
+                            <div><strong class="text-bold">Only Weekends are selectable</strong></div>
+                            <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+                        </div>
+                    </div>
+
+
+                </md-card-content>
+            </md-card>
+
+            <!-- sliders -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Sliders</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <div layout-margin>
+                        <h3>
+                            RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{sliderColor.red}},{{sliderColor.green}},{{sliderColor.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </h3>
+
+                        <md-slider-container>
+                            <span>R</span>
+                            <md-slider flex min="0" max="255" ng-model="sliderColor.red" aria-label="red" id="red-slider">
+                            </md-slider>
+                            <md-input-container>
+                                <input flex type="number" ng-model="sliderColor.red" aria-label="red" aria-controls="red-slider">
+                            </md-input-container>
+                        </md-slider-container>
+
+                        <md-slider-container>
+                            <span>G</span>
+                            <md-slider flex ng-model="sliderColor.green" min="0" max="255" aria-label="green" id="green-slider" class="md-accent">
+                            </md-slider>
+                            <md-input-container>
+                                <input flex type="number" ng-model="sliderColor.green" md-discrete aria-label="green" aria-controls="green-slider">
+                            </md-input-container>
+                        </md-slider-container>
+
+                        <md-slider-container>
+                            <span class="md-body-1">B</span>
+                            <md-slider flex ng-model="sliderColor.blue" min="0" max="255" aria-label="blue" id="blue-slider" class="md-primary">
+                            </md-slider>
+                            <md-input-container>
+                                <input flex type="number" ng-model="sliderColor.blue" aria-label="blue" aria-controls="blue-slider">
+                            </md-input-container>
+                        </md-slider-container>
+                    </div>
+                    <!-- disabled slider -->
+                    <div layout-margin>
+                        <div><strong class="text-bold">Disabled Slider</strong></div>
+                        <md-slider ng-model="sliderDisabled" ng-disabled="true" step="3" md-discrete min="0" max="10" aria-label="Disabled discrete 2"></md-slider>
+                    </div>
+
+                    <!-- vertical slider -->
+                    <div layout-margin><strong class="text-bold">Vertical Slider</strong></div>
+                    <div layout-margin layout="row">
+
+                        <md-slider-container flex>
+
+                            <md-slider ng-model="verticalSlider.vol" min="0" max="100" aria-label="volume" id="volume-slider" class="md-accent" md-vertical
+                            md-range></md-slider>
+                            <md-input-container>
+                                <input flex type="number" ng-model="verticalSlider.vol" aria-label="volume" aria-controls="volume-slider">
+                            </md-input-container>
+                            <span>Simple</span>
+                        </md-slider-container>
+
+                        <md-slider-container flex>
+
+                            <md-slider md-discrete ng-model="verticalSlider.bass" min="0" max="100" step="10" aria-label="bass" class="md-primary"
+                            md-vertical></md-slider>
+                            <md-input-container>
+                                <input flex type="number" ng-model="verticalSlider.bass" aria-label="bass" aria-controls="bass-slider">
+                            </md-input-container>
+                            <span>Discrete</span>
+                        </md-slider-container>
+                    </div>
+                </md-card-content>
+            </md-card>
+
+
+            <!-- checkbox, radios, switches -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Checkboxes, Radios and Switches</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <div layout-margin layout="row" layout-wrap>
+                        <!-- checkboxes -->
+                        <div flex layout="column">
+                            <div><strong class="text-bold">Checkboxes</strong></div>
+                            <br />
+                            <md-checkbox ng-model="check.cb1">
+                                Default Checkbox: {{ check.cb1 }}
+                            </md-checkbox>
+                            <md-checkbox ng-model="check.cb2" class="md-warn">
+                                Warn Checkbox: {{ check.cb2 }}
+                            </md-checkbox>
+                            <md-checkbox ng-model="check.cb3" class="md-primary">
+                                Primary Checkbox: {{ check.cb3 }}
+                            </md-checkbox>
+                            <md-checkbox ng-disabled="true">
+                                Checkbox: Disabled
+                            </md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="check.cb4">
+                                No Ink Checkbox: {{check.cb4}}
+                            </md-checkbox>
+                        </div>
+                        <!-- radios -->
+                        <div flex layout="column">
+                            <div><strong class="text-bold">Radio Group</strong></div>
+                            <br />
+                            <md-radio-group ng-model="radio.group">
+
+                                <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
+                                <md-radio-button value="Banana"> Banana </md-radio-button>
+                                <md-radio-button value="Mango">Mango</md-radio-button>
+                                <md-radio-button value="Pineapple">Pineapple</md-radio-button>
+                            </md-radio-group>
+                            <p><strong>Selected Value: </strong><span>{{ radio.group }}</span> </p>
+                        </div>
+                        <!-- switches -->
+                        <div flex layout="column">
+                            <div><strong class="text-bold">Switches</strong></div>
+                            <br />
+                            <md-switch ng-model="switch.cb1" aria-label="Switch 1">
+                                Switch 1: {{ switch.cb1 }}
+                            </md-switch>
+
+                            <md-switch ng-model="switch.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+                                Switch 2 (md-warn): {{ switch.cb2 }}
+                            </md-switch>
+
+                            <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
+                                Switch (Disabled)
+                            </md-switch>
+
+                            <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="switch.cb3">
+                                Switch (Disabled, Active)
+                            </md-switch>
+
+                            <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="switch.cb4">
+                                Switch (md-primary): No Ink
+                            </md-switch>
+                        </div>
+
+                    </div>
+                </md-card-content>
+            </md-card>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,84 @@
+
+
+.email-nav .navigation {
+    margin: 0; padding: 0;
+}
+.email-nav .navigation li.active > a {
+    background: #E91E63;
+    color: #fff;
+}
+.email-nav .navigation li a,
+.email-nav .tags a {
+    display: block;
+    padding: 5px 14px;
+    color: #424242;
+}
+.email-nav .tags a > span {
+    font-size: 1.05rem;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+}
+.email-nav .tags {
+    margin: 0; padding: 0;
+}
+.email-content .email-lists {
+    margin: 0; padding: 0;
+}
+.email-content .email-lists {
+    border: 1px solid #E0E0E0;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,.05);
+    margin-top: 15px;
+    white-space: nowrap;
+    overflow-y: hidden;
+}
+
+.email-content .email-lists li {
+    width: 300px;
+    padding: 20px;
+    padding-bottom: 15px;
+    border-right: 1px solid #E0E0E0;
+    transition: .2s;
+    display: inline-block;
+    white-space:normal;
+}
+.email-content .email-lists li.read a,
+.email-content .email-lists li.read a p
+{
+    color: #515151;
+    font-weight: 100;
+}
+
+.email-content .email-lists li.active {
+    background: #FFF8E1;
+
+}
+
+.email-content .email-lists li:not(.active):hover {
+    background: #E0E0E0;
+}
+
+.email-content .email-lists li a {
+    color: #212121;
+    font-weight: 500;
+}
+.email-content .email-lists li a .subject {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.email-content .email-lists li a .summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.email-content .email-lists li a .group .remove-email:hover {
+    color: #E53935;
+}

@@ -1,0 +1,190 @@
+<div class="page page-dashboard" layout-gt-sm="column" ng-controller="DashboardCtrl">
+
+    <div flex class="today-stats">
+        <h3 class="md-caption" layout-margin>Today's Stats</h3>
+
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="33" class="stats-wrapper">
+                <div class="stats">
+                    <div class="val">3.1K</div>
+                    <div class="md-caption text-uppercase">Page Views</div>
+                </div>
+                <span class="chart-trends" sparkline type="line" width="8em" height="2em" fill-color="transparent" line-color="#388E3C">3,4,2,3,4,1,4,2</span>
+            </div>
+
+            <div flex-gt-sm="33" class="stats-wrapper">
+                <div class="stats">
+                    <div class="val">288</div>
+                    <div class="md-caption text-uppercase">Downloads</div>
+                </div>
+                <span class="chart-trends" sparkline type="line" width="8em" height="2em" fill-color="transparent" line-color="#388E3C">3,4,2,3,4,4,6,2</span>
+            </div>
+
+            <div flex-gt-sm="33" class="stats-wrapper">
+                <div class="stats">
+                    <div class="val">$189</div>
+                    <div class="md-caption text-uppercase">Earnings</div>
+                </div>
+                <span class="chart-trends" sparkline type="line" width="8em" height="2em" fill-color="transparent" line-color="#388E3C">3,4,2,3,4,5,4,5</span>
+            </div>
+        </div>
+    </div>
+
+    <div layout-gt-sm="row">
+        <md-card flex-gt-sm="40">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase text-bold">Browser Sessions</span>
+                    <!-- <md-divider></md-divider> -->
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content style="text-align: center;">
+            	<c3-chart id="c3chartbrowsershare" config="browserconfig"></c3-chart>
+            </md-card-content>
+        </md-card>
+
+        <md-card flex-gt-sm="60">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase text-bold">Weekly Growth</span>
+                    <!-- <md-divider></md-divider> -->
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content>
+                <c3-chart id="c3chartweeklygrowth" config="weeklygrowthconfig"></c3-chart>
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <div layout-gt-sm="row">
+
+
+        <md-card flex-gt-sm="60">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase text-bold">Visitors Age</span>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content>
+                <c3-chart id="c3visitorsage" config="visitorsageconfig"></c3-chart>
+
+            </md-card-content>
+
+        </md-card>
+
+        <md-card flex-gt-sm="40">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase text-bold">Activities</span>
+                    <!-- <md-divider></md-divider> -->
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content class="dashboard-activities">
+                <ul class="list-unstyled">
+                    <li class="primary">
+                        <span class="point"></span>
+                        <span class="time md-caption">2 mins ago</span>
+                        <p>Jonathan attended a meeting.</p>
+                    </li>
+                    <li class="success">
+                        <span class="point"></span>
+                        <span class="time md-caption">1 hour ago</span>
+                        <p>Designed the wordpress theme</p>
+                    </li>
+                    <li class="warning">
+                        <span class="point"></span>
+                        <span class="time md-caption">4:30 p.m</span>
+                        <p>Lily created her account.</p>
+                    </li>
+                    <li class="info">
+                        <span class="point"></span>
+                        <span class="time md-caption">2 days ago</span>
+                        <p>Your domain will expired in 9 days.</p>
+                    </li>
+                    <li class="danger">
+                        <span class="point"></span>
+                        <span class="time md-caption">1 week ago</span>
+                        <p>Lorem ipsum dolar sit amet consectator.</p>
+                    </li>
+                </ul>
+
+            </md-card-content>
+
+        </md-card>
+
+    </div>
+
+    <div layout-gt-sm="row">
+        <md-card flex-gt-sm="100">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase text-bold">Project Stats</span>
+                    <!-- <md-divider></md-divider> -->
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content>
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column class="text-uppercase">Id</th>
+                                <th md-column class="text-uppercase">Project</th>
+                                <th md-column class="text-uppercase">Fees</th>
+                                <th md-column class="text-uppercase">Status</th>
+                                <th md-column class="text-uppercase">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row>
+                                <td md-cell>220</td>
+                                <td md-cell>Convert to Sass</td>
+                                <td md-cell>$340</td>
+                                <td md-cell><md-progress-circular md-mode="determinate" value="60" class="md-warn" md-diameter="25"></md-progress-circular></td>
+                                <td md-cell>10<sup>th</sup> Dec 2016</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell>101</td>
+                                <td md-cell>Designing wordpress theme</td>
+                                <td md-cell>$1340</td>
+                                <td md-cell><md-progress-circular md-mode="determinate" class="md-accent" value="80"  md-diameter="25"></md-progress-circular></td>
+                                <td md-cell>20<sup>th</sup> Dec 2016</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell>310</td>
+                                <td md-cell>Adding animations to template</td>
+                                <td md-cell>$120</td>
+                                <td md-cell><md-progress-circular md-mode="determinate" value="90" md-diameter="25"></md-progress-circular></td>
+                                <td md-cell>2<sup>nd</sup> Dec 2016</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell>405</td>
+                                <td md-cell>Lorem ipsum dolar sit amet</td>
+                                <td md-cell>$310</td>
+                                <td md-cell><md-progress-circular md-mode="determinate" value="50" class="md-warn" md-diameter="25"></md-progress-circular></td>
+                                <td md-cell>29<sup>th</sup> Nov 2016</td>
+                            </tr>
+                            <tr md-row>
+                                <td md-cell>445</td>
+                                <td md-cell>Building admin template</td>
+                                <td md-cell>$890</td>
+                                <td md-cell><md-progress-circular md-mode="determinate" value="30" class="md-warn md-hue-2" md-diameter="30"></md-progress-circular></td>
+                                <td md-cell>1<sup>st</sup> Jan 2017</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </md-table-container>
+            </md-card-content>
+
+        </md-card>
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,106 @@
+<div class="page page-email" layout-gt-sm="row" layout-margin ng-controller="EmailCtrl">
+    <md-button class="md-fab md-accent" style="position: fixed; right: 20px; bottom: 20px;" ng-click="composeEmail($event)">
+      <md-icon class="ion-ios-add"></md-icon>
+    </md-button>
+    <div flex-gt-sm="25">
+        <nav class="email-nav">
+            <form action="javascript:;">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Search emails</label>
+                    <input type="text"/>
+                </md-input-container>
+            </form>
+            <div class="md-caption text-bold text-uppercase" layout-margin>Navigation</div>
+            <ul class="list-unstyled navigation" style="margin-bottom: 1rem">
+                <li class="active"><a href="javascript:;"><span class="ion-ios-archive">&nbsp;</span>Inbox (4)</a></li>
+                <li><a href="javascript:;"><span class="ion-ios-jet">&nbsp;</span>Sent</a></li>
+                <li><a href="javascript:;"><span class="ion-ios-magnet">&nbsp;</span>Spam</a></li>
+                <li><a href="javascript:;"><span class="ion-ios-paper">&nbsp;</span>Drafts (2)</a></li>
+                <li><a href="javascript:;"><span class="ion-md-chatbubbles">&nbsp;</span>Chats</a></li>
+                <li><a href="javascript:;"><span class="ion-md-trash">&nbsp;</span>Trash</a></li>
+            </ul>
+            <div class="md-caption text-bold text-uppercase" layout-margin>Tags</div>
+            <ul class="list-unstyled tags">
+                <li ng-repeat="tag in tags">
+                    <a href="javascript:;"><span class="ion-ios-pricetag" md-colors="::{color: tag.color}"></span>{{tag.name}}</a>
+                </li>
+            </ul>
+
+            <div layout layout-align="center center" layout-margin>
+                <md-input-container class="md-block" flex="85">
+                    <input type="text" placeholder="Add Tags"/>
+                </md-input-container>
+                <md-button class="md-fab md-warning md-xs" style="margin-top: -1.3rem">
+                  <md-icon class="ion-ios-add-circle"></md-icon>
+                </md-button>
+            </div>
+
+        </nav>
+    </div>
+
+    <div flex-gt-sm="75">
+        <div class="email-content">
+            <ul class="email-lists list-unstyled clearfix" style="margin-bottom: 2rem">
+                <li ng-repeat="email in emailLists" ng-class="{'read': email.read, 'active': email.active}">
+                    <a href="javascript:;">
+                        <div class="group clearfix md-caption">
+                            <span class="sender-name left text-bold">{{email.sender}}</span>
+                            <span class="email-date md-caption" style="float: right; " md-colors="::{color: 'accent-500'}">{{email.date}}</span>
+                        </div>
+                        <p class="subject">{{email.subject}}</p>
+                        <p class="summary small text-muted" style="margin-bottom: 0">{{email.content}}</p>
+
+                        <div class="group clearfix">
+                            <span class="ion-ios-trash remove-email" style="float: left"></span>
+                            <span ng-class="{'ion-ios-attach': email.attachment}" style="float: right"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul> <!-- #end email summary lists -->
+
+            <md-card class="email-view">
+                <md-card-title>
+                    <md-card-title-text>
+                        <div class="md-title">Meetup at C.P., New Delhi</div>
+                        <div class="md-subhead text-bold">Organiser.com | <span class="md-caption" md-colors="::{color: 'accent-500'}">12<sup>th</sup> Dec 2016</span></div>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+
+                    <md-menu>
+                        <div flex-gt-xs="30" class="md-button-group">
+    	                    <md-button class="md-raised md-small md-primary">
+                                <md-icon class="ion-ios-trash"></md-icon>
+                            </md-button>
+                            <md-button class="md-raised md-small md-primary">
+                                <md-icon class="ion-md-return-left"></md-icon>
+                            </md-button>
+                            <md-button class="md-raised md-small md-primary" ng-click="$mdOpenMenu($event)">
+                                More
+                                <md-icon class="ion-ios-arrow-down"></md-icon>
+                            </md-button>
+                        </div>
+                        <md-menu-content width="2">
+                            <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                    <p>Proin nonummy, lacus eget pulvinar lacinia, pede felis dignissim leo, vitae tristique magna lacus sit amet eros. Nullam ornare. Praesent odio ligula, dapibus sed, tincidunt eget, dictum ac, nibh. Nam quis lacus. Nunc eleifend molestie velit. Morbi lobortis quam eu velit.
+                        Donec euismod vestibulum massa. Donec non lectus. Aliquam commodo lacus sit amet nulla.</p>
+                    <p>Cras dignissim elit et augue. Nullam non diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst. Aenean vestibulum. Sed lobortis elit quis lectus. Nunc sed lacus at augue bibendum dapibus.</p>
+                    <blockquote>
+                        <p>Ea nam error audiam, oratio nostrud pro id vulputate.</p>
+                        <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    </blockquote>
+                    <trix-editor angular-trix ng-model="trixeditor" class="trix-content" style="min-height: 150px"></trix-editor>
+                    <md-button class="md-raised md-small" style="float: right" md-colors="::{background: 'green-500'}">Reply</md-button>
+                </md-card-content>
+            </md-card>
+        </div>
+
+
+    </div>
+
+</div>

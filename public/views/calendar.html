@@ -1,0 +1,60 @@
+<div class="page page-calendar" layout-gt-sm="column" ng-controller="CalendarDemoCtrl">
+
+    <div flex>
+
+        <div layout-gt-sm="row" layout-margin>
+            <div flex-gt-sm="70">
+                <!-- calendar toolbar, this will replaced default toolbar -->
+				<div class="calendar-toolbar" layout-gt-xs="row" layout-align-gt-xs="space-between center">
+					<div flex-gt-xs="30" class="md-button-group">
+	                    <md-button class="md-raised md-small md-accent" ng-click="prev('mycalendar')">
+                            <md-icon class="ion-ios-arrow-back"></md-icon>
+                        </md-button>
+                        <md-button class="md-raised md-small md-accent" ng-click="next('mycalendar')">
+                            <md-icon class="ion-ios-arrow-forward"></md-icon>
+                        </md-button>
+                        <md-button class="md-raised md-small md-accent" ng-click="today('mycalendar')">today</md-button>
+
+	                </div>
+
+	               	<strong class="text-uppercase md-caption" style="padding-right: .5rem; padding-left: .5rem">{{currentDate}}</strong>
+	               	<div class="md-button-group" flex-gt-xs="30">
+
+	                    <md-button class="md-raised md-small md-accent" ng-click="changeView('month', 'mycalendar')">Month</md-button>
+	                    <md-button class="md-raised md-small md-accent" ng-click="changeView('agendaWeek', 'mycalendar')">Week</md-button>
+	                    <md-button class="md-raised md-small md-accent" ng-click="changeView('agendaDay', 'mycalendar')">Day</md-button>
+	                </div>
+				</div>
+				<!-- calendar -->
+				<div ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="mycalendar"></div>
+            </div>
+
+            <div flex-gt-sm="30">
+                <md-button class="md-raised md-primary md-small" style="margin-bottom: .6rem" ng-click="addEvent()">
+	                <md-icon class="ion-ios-add-circle"></md-icon>
+					Add Event
+				</button>
+                </md-button>
+                <md-card ng-repeat="event in events" class="event-box">
+                    <md-card-content>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <input type="text" ng-model="event.title"/>
+                            <div class="event-date md-caption text-bold">{{event.humanDate}}</div>
+                        </md-input-container>
+
+						<div class="event-remove-icon ion-ios-trash" ng-click="removeEvent($index)"></div>
+                        <ul class="event-colors list-unstyled">
+                            <li md-colors="::{background: 'indigo-500'}" ng-click="changeEventColor($index, 'bg-primary')"></li>
+                            <li md-colors="::{background: 'blue-500'}" ng-click="changeEventColor($index, 'bg-info')"></li>
+                            <li md-colors="::{background: 'green-500'}" ng-click="changeEventColor($index, 'bg-success')"></li>
+                            <li md-colors="::{background: 'yellow-500'}" ng-click="changeEventColor($index, 'bg-warning')"></li>
+                            <li md-colors="::{background: 'red-500'}" ng-click="changeEventColor($index, 'bg-danger')"></li>
+                        </ul>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,29 @@
+<md-card class="email-view">
+    <md-card-title>
+        <md-card-title-text>
+            <div class="md-title text-uppercase">New Message</div>
+
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <form name="loginForm">
+            <md-input-container class="md-block">
+                <label>To</label>
+                <input type="email" name="email" placeholder="example@xyz.com" required ng-pattern="/^.+@.+\..+$/"/>
+
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Subject</label>
+                <input type="text"  placeholder="Lorem ipsum dolar sit amet..." name="subject"/>
+
+            </md-input-container>
+
+
+
+        </form>
+
+        <trix-editor angular-trix ng-model="trixeditor" class="trix-content" style="min-height: 150px"></trix-editor>
+        <md-button class="md-raised md-primary">Send Message</md-button>
+    </md-card-content>
+</md-card>

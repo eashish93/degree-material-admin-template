@@ -1,0 +1,108 @@
+<div class="page page-ui-grids">
+
+    <div layout="column">
+        <!-- demo start -->
+        <!-- 20% value -->
+        <p  layout-margin>This whole container is basically wrapped inside <code>[layout=column]</code> directive. </p>
+        <md-divider layout-margin></md-divider>
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="20" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=20]
+            </div>
+            <div flex-gt-sm="20" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=20]
+            </div>
+            <div flex-gt-sm="20" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=20]
+            </div>
+            <div flex-gt-sm="20" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=20]
+            </div>
+            <div flex-gt-sm="20" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=20]
+            </div>
+        </div>
+
+        <!-- 50% ratio -->
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="50" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=50]
+            </div>
+            <div flex-gt-sm="50" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                [flex=50]
+            </div>
+        </div>
+
+        <!-- 80%-20% ratio-->
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="80" md-colors="{background: 'warn-500'}" layout-margin layout-padding>
+                [flex=80]
+            </div>
+            <div flex-gt-sm="20" md-colors="{background: 'warn-500'}" layout-margin layout-padding>
+                [flex=20]
+            </div>
+        </div>
+
+        <!-- 33% ratio-->
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="33" md-colors="{background: 'warn-500'}" layout-margin layout-padding>
+                [flex=33]
+            </div>
+            <div flex-gt-sm="33" md-colors="{background: 'warn-500'}" layout-margin layout-padding>
+                [flex=33]
+            </div>
+            <div flex-gt-sm="33" md-colors="{background: 'warn-500'}" layout-margin layout-padding>
+                [flex=33]
+            </div>
+        </div>
+
+        <p layout-margin>Mobile Layout</p>
+        <md-divider layout-margin></md-divider>
+
+        <div layout="row" layout-sm="column">
+            <div flex flex-order-gt-sm="2" md-colors="{background: 'warn-500'}" layout-margin layout-padding>
+                I'm right on larger devices and left on mobile devices. Using [flex-order=2] directive.
+            </div>
+            <div flex flex-order="1" md-colors="{background: 'primary-500'}" layout-margin layout-padding>
+                I'm left on larger devices and right on mobile devices. Using [flex-order=1] directive.
+            </div>
+        </div>
+
+        <p layout-margin>Offsetting boxes</p>
+        <md-divider layout-margin></md-divider>
+
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="50" flex-offset-gt-sm="30" md-colors="{background: 'accent-500'}" layout-margin layout-padding>
+                [flex=50]. 30% Offset by left.
+            </div>
+            <div flex-gt-sm="20" md-colors="{background: 'accent-500'}" layout-margin layout-padding>
+                [flex=33]
+            </div>
+        </div>
+
+        <div layout-gt-sm="row">
+            <div flex-gt-sm="30" md-colors="{background: 'accent-500'}" layout-margin layout-padding>
+                [flex=30]
+            </div>
+            <div flex-gt-sm="30" flex-offset-gt-sm="40" md-colors="{background: 'accent-500'}" layout-margin layout-padding>
+                [flex=30]
+            </div>
+        </div>
+
+        <!-- Grid List -->
+        <md-content ng-controller="GridListDemo">
+            <p layout-margin>Random Pinterest Like Grid Lists</p>
+            <md-divider layout-margin></md-divider>
+            <md-grid-list md-cols-gt-md="12" md-cols="3" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px">
+                <md-grid-tile ng-repeat="tile in colorTiles" ng-style="{'background': tile.color}"
+                    md-colspan-gt-sm="{{tile.colspan}}"
+                    md-rowspan-gt-sm="{{tile.rowspan}}">
+                </md-grid-tile>
+            </md-grid-list>
+        </md-content>
+
+
+
+    </div>
+
+</div>

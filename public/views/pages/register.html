@@ -1,0 +1,46 @@
+<div class="page page-register" layout-gt-xs="row" layout-align="center center">
+    <md-card flex-gt-sm="35" flex-sm="50" layout-padding layout-margin>
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-headline text-uppercase text-bolder">Degree</span>
+                <span class="md-subhead">Register as a new user.</span>
+            </md-card-header-text>
+        </md-card-header>
+
+
+        <md-card-content>
+            <form name="registerForm">
+                <md-input-container class="md-block">
+                    <label>Email Address</label>
+                    <input type="email" ng-model="register.email" name="email" placeholder="example@xyz.com" required ng-pattern="/^.+@.+\..+$/"/>
+
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input type="password"  ng-model="register.pass" name="password" placeholder="........" required ng-minlength="8"/>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Retype Password</label>
+                    <input type="password"  ng-model="register.retypepass" name="password" placeholder="........" required ng-minlength="8"/>
+                </md-input-container>
+
+                <div layout>
+                    <md-checkbox>I agree to the terms and conditions.</md-checkbox>
+
+                </div>
+                <div layout layout-align="end center">
+                    <md-button class="md-raised md-primary" flex href="#/dashboard">Register</md-button>
+                </div>
+
+
+            </form>
+        </md-card-content>
+
+        <md-footer class="text-center">
+            <div class="md-caption">Already have an account?&nbsp;<a href="#/pages/forget-pass">Sign In Now</a></div>
+        </md-footer>
+
+    </md-card>
+
+</div>

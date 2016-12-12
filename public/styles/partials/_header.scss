@@ -1,0 +1,66 @@
+.site-head {
+    position: fixed;
+    width: 100%;
+    z-index: 59;
+    @media(min-width: 960px) {
+        width: calc(100% - #{$sitenav-width});
+    }
+    .toolbar {
+        min-height: $site-toolbar-height;
+        max-height: $site-toolbar-height;
+        padding: 1rem;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,.08)!important;
+
+    }
+    .toolbar .toolbar-tools {
+        width: 100%;
+    }
+    .toolbar .toolbar-tools .profile {
+        line-height: 1;
+        margin-left: 1rem;
+        position: relative;
+        > img { cursor: pointer; border-radius: 50%; box-shadow: 0 1px 1px rgba(0,0,0,.1); max-width: 100%;}
+        > .isonline {
+            width: 6px; height: 6px; border-radius: 100%;
+            background: $md-green-300;
+            border: 1px solid #fff;
+            position: absolute;
+            bottom: 2px; right: 2px;
+        }
+    }
+}
+
+
+.search-container {
+    position: fixed;
+    z-index: 99999;
+    background: rgba(255, 255, 255, .96);
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+    padding: 3rem;
+
+    .search-input {
+        border: none;
+        border-bottom: 2px solid $md-grey-800;
+        width: 90%;
+        padding: 1rem 1rem;
+        background: none;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-top: 4rem;
+        transition: .3s ease-in;
+        color: $md-brown-900;
+        &:focus {
+            border-color: $md-brown-400;
+        }
+    }
+    // display: none;
+    > md-icon {
+        position: fixed;
+        cursor: pointer;
+        font-size: 2.5rem;
+        right:3rem; top: 2rem;
+    }
+}

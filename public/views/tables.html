@@ -1,0 +1,92 @@
+<div class="page page-tables" layout-gt-sm="column" ng-controller="TableDemoCtrl">
+
+    <div flex>
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase">Static Table</span>
+                    <md-divider></md-divider>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content>
+
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column></th>
+                                <th md-column>Post</th>
+                                <th md-column>Author</th>
+                                <th md-column>Categories</th>
+                                <th md-column>Tags</th>
+                                <th md-column>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row ng-repeat="data in staticData">
+								<td md-cell>
+									<md-checkbox></md-checkbox>
+								</td>
+								<td md-cell>{{data.post}}</td>
+								<td md-cell>{{data.author}}</td>
+								<td md-cell>{{data.categories}}</td>
+                                <td md-cell>
+                                    <small ng-repeat="tag in data.tags" style="border-radius: 2px; padding: 2px 4px; margin-right: 4px" md-colors="{background: data.tagColor}">{{tag}}</small>
+                                </td>
+								<td md-cell>{{data.date}}</td>
+							</tr>
+                        </tbody>
+                    </table>
+
+                </md-table-container>
+            </md-card-content>
+
+        </md-card>
+
+
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead text-uppercase">Data Table</span>
+                    <md-divider></md-divider>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content>
+                <md-table-container>
+                    <table md-table md-row-select='options.rowSelection' multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-or-reorder="onReorder">
+                            <tr md-row>
+                                <th md-column md:order-by="name"><span>Dessert (100g serving)</span></th>
+                                <th md-column md:order-by="type"><span>Type</span></th>
+                                <th md-column md-numeric md-order-by="calories.value" md-desc><span>Calories</span></th>
+                                <th md-column md-numeric md-order-by="fat.value"><span>Fat (g)</span></th>
+                                <th md-column md-numeric md-order-by="protein.value"><span>Protein (g)</span></th>
+                                <th md-column md-numeric md-order-by="iron.value" hide-sm>Iron (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row md-select="dessert" md-select-id="name" data-md-on-select="log" md-on-deselect="deselect" md-auto-select="options.autoSelect" data-ng-repeat="dessert in desserts.data | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page - 1) * query.limit">
+                                <td md-cell>{{dessert.name}}</td>
+                                <td md-cell>
+                                  <md-select ng-model="dessert.type" placeholder="Other">
+                                    <md-option ng-value="type" ng-repeat="type in getTypes()">{{type}}</md-option>
+                                  </md-select>
+                                </td>
+                                <td md-cell>{{dessert.calories.value}}</td>
+                                <td md-cell>{{dessert.fat.value | number: 2}}</td>
+                                <td md-cell>{{dessert.protein.value | number: 2}}</td>
+                                <td md-cell hide-sm>{{dessert.iron.value}}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="onPaginate" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks"></md-table-pagination>
+            </md-card-content>
+        </md-card>
+
+
+    </div>
+
+</div>

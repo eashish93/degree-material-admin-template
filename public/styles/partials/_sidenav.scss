@@ -1,0 +1,142 @@
+
+.md-sidenav-left {
+    min-width: $sitenav-width;
+    width: $sitenav-width;
+    background: $md-blue-grey-900;
+    overflow: hidden;
+
+
+    > md-toolbar > a.brand-logo {
+        color:#fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        margin-top: 1rem;
+        margin-bottom: 1.8rem;
+        font-weight: 700;
+        font-size: 18px;
+        margin-left: -.4rem;
+
+    }
+
+    > md-toolbar .profile {
+        display: flex;
+        align-items: center;
+    }
+    > md-toolbar .profile > figure {
+        margin: 0;
+        position: relative;
+    }
+    /** isonline dot */
+    > md-toolbar .profile > figure > .isonline {
+        width: 8px; height: 8px; border-radius: 100%;
+        background: $md-green-300;
+        border: 1px solid #fff;
+        position: absolute;
+        top: 2px; left: 2px;
+    }
+
+    > md-toolbar .profile img {
+        width: 36px; height: 36px;
+        border-radius: 100%;
+        margin-right: .8rem;
+    }
+    > md-toolbar .profile > .group {
+        font-size: 14px;
+    }
+    > md-toolbar .profile > .group > .name {
+        margin: 0;
+        margin-top: -4px;
+        font-weight: 500;
+        font-size: .9rem;
+    }
+}
+
+
+.md-sidenav-left .site-nav {
+    $offset : 124px;
+    // for scrollbar to hide, but scrolling through mousewheel or touchpad.
+    position: absolute;
+    top: $offset; bottom: 0; left: 0; right: -15px;
+    overflow-y: scroll; height: calc(100% - #{$offset});
+
+    > .md-caption {
+        padding: .5rem 1rem;
+        font-weight: 500;
+    }
+    .nav {
+        margin: 0; padding: 0;
+    }
+    a {
+        color: $md-grey-200;
+        text-decoration: none;
+        display: block;
+        padding: .6rem 1.4rem;
+        position: relative;
+        font-size: 14px;
+        white-space: nowrap;
+        margin-bottom:2px;
+        transition: .15s ease-in;
+    }
+    a:hover, li.open > a, li.active > a{
+        background: $md-blue-grey-800;
+        > md-icon.first {background: $md-blue-grey-900;}
+    }
+
+    li.open > .inner-drop {
+        display: block;
+    }
+    li.open > a > md-icon.last:before {
+        transform: rotate(-90deg);
+    }
+    // for inner-drop anchors
+    li.active .inner-drop > li.active a{
+        color: $md-grey-100;
+        background: lighten($md-blue-grey-900, 2%);
+        font-weight: 500;
+    }
+
+    a > md-icon.first {
+        color: $md-grey-200;
+        background: $md-blue-grey-800;
+        border-radius: 50%;
+        text-align: center;
+        margin-top: -2px;
+        display: inline-block;
+        margin-right: 1rem;
+        &:before {
+            position: relative;
+            top: 2px;
+        }
+    }
+    a > md-icon.last {
+        color: #fff;
+        top: .69rem;
+        right: 1rem;
+        transition: .15s ease-in;
+        position:absolute;
+        font-size: 16px;
+    }
+
+
+    .inner-drop {
+        padding: 0;
+        background: lighten($md-blue-grey-900, 2%);
+        display: none;
+    }
+    .inner-drop a {
+        color: $md-grey-300;
+        font-size: 13px;
+        padding-left: 4.2rem;
+    }
+
+
+
+}
+
+
+
+
+
+
+// END

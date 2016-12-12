@@ -1,0 +1,40 @@
+<div class="toolbar md-title" layout="row" layout-align="none center">
+
+    <div class="toolbar-tools" layout="row" layout-align="none center">
+        <md-button class="md-icon-button" md-ripple-size="full" hide-gt-sm>
+            <md-icon class="ion-ios-menu md-title" ng-click="toggleSidenav()"></md-icon>
+        </md-button>
+        <h1 class="md-subhead text-uppercase" style="margin-left: 1.4rem">{{headTitle}}</h1>
+        <span flex></span>
+        <form action="#na" id="site-search" class="site-search" hide-xs>
+            <md-button class="md-icon-button" md-ripple-size="full">
+                <md-icon class="ion-ios-search md-title" ng-click="openSearch()"></md-icon>
+            </md-button>
+
+        </form>
+
+        <md-menu>
+            <figure class="profile">
+                <img src="images/admin.jpg" alt="admin" ng-click="$mdOpenMenu($event)" width="32" height="32">
+                <span class="isonline"></span>
+            </figure>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button md-menu-align-target>My Profile</button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button md-menu-align-target>Change Password</button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button md-menu-align-target>Account Setting</button>
+                </md-menu-item>
+                <md-divider></md-divider>
+                <md-menu-item>
+                    <md-button md-menu-align-target>Logout</md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+
+</div>

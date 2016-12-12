@@ -1,0 +1,108 @@
+<div class="page page-invoice" layout-gt-sm="row">
+
+    <md-card flex-gt-sm="100" layout-margin>
+
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title text-bolder text-uppercase" style="letter-spacing: 1.5px">Invoice</span>
+                <span class="md-subhead">By Degree App</span>
+                <md-divider></md-divider>
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-content>
+            <div layout="row" layout-align="space-between center" style="margin-top: -2rem; margin-bottom: 1rem">
+                <div>
+                    <div><strong>Invoice No - 100</strong></div>
+                    <div class="md-caption">Date: 1<sup>st</sup> Nov 2016</div>
+                </div>
+                <div>
+                    <md-button class="md-fab md-mini md-primary">
+                        <md-icon class="ion-ios-print"></md-icon>
+                    </md-button>
+                    <md-button class="md-fab md-mini md-primary">
+                        <md-icon class="ion-ios-cloud-download"></md-icon>
+                    </md-button>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div class="address-wrap" flex style="border: 1px solid #eee;"  layout-padding>
+                    <div class="address-title">
+                        <h3 class="text-bolder">Sent To</h3>
+                        <div class="text-bold">XYZ Software Ltd.</div>
+                    </div>
+                    <address>
+                        <strong>LLIC, Inc.</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                        <abbr title="Phone">Ph:</abbr> (123) 456-7890
+                    </address>
+                </div>
+
+                <div class="address-wrap" flex style="border: 1px solid #eee" layout-padding>
+                    <div class="address-title">
+                        <h3 class="text-bolder">Recieved From</h3>
+                        <div class="text-bold">Degree Pvt Ltd.</div>
+                    </div>
+                    <address>
+                        <strong>Robert Smith</strong><br>
+                        CS-343, Creative Studio, 340<br>
+                        San Francisco, CA 13107<br>
+                        <abbr title="Phone">Ph:</abbr> (123) 456-7890
+                    </address>
+                </div>
+            </div>
+            <br />
+
+
+            <md-table-container>
+                <table md-table>
+                    <thead md-head md-colors="::{background: 'grey-600'}">
+                        <tr md-row>
+                            <th md-column>#</th>
+                            <th md-column>Product Name</th>
+                            <th md-column>Quantity</th>
+                            <th md-column>Unit Price</th>
+                            <th md-column>Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody md-body>
+                        <tr md-row>
+                            <td md-cell>2400</td>
+                            <td md-cell>Moto G2 32GB</td>
+                            <td md-cell>1</td>
+                            <td md-cell>$449.00</td>
+                            <td md-cell>$449.00</td>
+                        </tr>
+                        <tr md-row>
+                            <td md-cell>2401</td>
+                            <td md-cell>IPad Mini 32GB Wifi+Cellular</td>
+                            <td md-cell>2</td>
+                            <td md-cell>$349.00</td>
+                            <td md-cell>$698.00</td>
+                        </tr>
+                        <tr md-row>
+                            <td md-cell>2402</td>
+                            <td md-cell>MacPro Retina 13"</td>
+                            <td md-cell>1</td>
+                            <td md-cell>$999.00</td>
+                            <td md-cell>$999.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+
+            <div style="text-align: right">
+                <h2 class="text-uppercase text-bolder" style="margin-bottom: .2rem">Total</h2>
+                <h3>$2146</h3>
+            </div>
+            <md-divider></md-divider>
+            <p class="text-center md-caption" >This is a computer generated invoice. No signature required.</p>
+
+        </md-card-content>
+
+    </md-card>
+
+</div>

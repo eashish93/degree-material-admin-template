@@ -1,0 +1,192 @@
+<div class="page page-ui-extras" ng-controller="ExtrasDemoCtrl">
+
+    <div layout-gt-sm="row">
+        <div flex-gt-sm="50">
+
+            <!-- lists -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Lists</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <md-list flex>
+                        <md-list-item class="md-2-line" ng-repeat="item in listItems" ng-click="null">
+                            <img src="images/av-1.jpg" class="md-avatar" />
+                             <div class="md-list-item-text" layout="column">
+                                 <h4>{{item.name}}</h4>
+                                 <p>{{item.note}}</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+
+            <!-- lists control -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Lists Control</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <md-list flex>
+                        <md-list-item ng-repeat="topping in toppings">
+                            <p> {{ topping.name }} </p>
+                            <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+                        </md-list-item>
+                    </md-list>
+                    <md-divider layout-margin layout-padding></md-divider>
+
+                    <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
+                        <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+                        <p>{{ person.name }}</p>
+                        <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
+                        <md-icon class="md-secondary md-hue-3 ion-ios-mail md-title" ng-click="doSecondaryAction($event)"></md-icon>
+                    </md-list-item>
+                </md-card-content>
+            </md-card>
+
+        </div>
+
+        <div flex-gt-sm="50">
+
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Dropdowns</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <p class="inset text-bold" style="margin-bottom:0">Different widths with <code class="md-highlight">width=num</code> attribute</p>
+                    <div layout="row" layout-wrap layout-align="space-between center">
+                        <!-- menu example -1 -->
+                        <div layout="column">
+                            <p class="inset">With&nbsp;<code class="md-highlight">width=2</code></p>
+                            <md-menu md-offset="0 -7">
+                                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-menu-origin class="ion-ios-apps md-title"></md-icon>
+                                </md-button>
+                                <md-menu-content width="2">
+                                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                        <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+
+                        <div layout="column">
+                            <p class="inset">With&nbsp;<code class="md-highlight">width=4</code></p>
+                            <md-menu md-offset="0 -7">
+                                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-menu-origin class="ion-ios-archive md-title"></md-icon>
+                                </md-button>
+                                <md-menu-content width="4">
+                                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                        <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+
+                        <div layout="column">
+                            <p class="inset">With&nbsp;<code class="md-highlight">width=6</code></p>
+                            <md-menu md-offset="0 -7">
+                                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-menu-origin class="ion-ios-basket md-title"></md-icon>
+                                </md-button>
+                                <md-menu-content width="6">
+                                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                        <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Item</span> {{item}} </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+
+                        <!-- end different widths -->
+                    </div>
+
+                </md-card-content>
+            </md-card>
+
+            <!-- toasts -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Toasts</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content style="position: relative">
+                    <md-button class="md-raised" ng-click="showToast()">Show Toast</md-button>
+                    <p><b>Toast Position: "{{getToastPosition()}}"</b></p>
+                    <md-checkbox ng-repeat="(name, isSelected) in toastPosition" ng-model="toastPosition[name]">
+                        {{name}}
+                    </md-checkbox>
+                </md-card-content>
+            </md-card>
+
+            <!-- tooltips -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Tooltips</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p class="inset" style="margin-bottom:0">The tooltip is visible when you hovered, focused or tap on fab button.</p>
+                    <md-button class="md-fab md-accent" aria-label="Use Android">
+                      <md-icon class="ion-logo-android"></md-icon>
+                      <md-tooltip md-visible="tooltip.showTooltip" md-direction="{{tooltip.tipDirection}}">
+                          Insert Drive
+                      </md-tooltip>
+                    </md-button>
+
+                    <md-radio-group ng-model="tooltip.tipDirection" layout="row" layout-align="center center" style="margin-top: 1.5rem">
+                        <md-radio-button value="left"> Left </md-radio-button>
+                        <md-radio-button value="top">Top</md-radio-button>
+                        <md-radio-button value="bottom">Bottom</md-radio-button>
+                        <md-radio-button value="right">Right</md-radio-button>
+                    </md-radio-group>
+
+                </md-card-content>
+            </md-card>
+
+            <!-- whiteframe -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Whiteframes</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="column">
+                    <md-whiteframe class="md-whiteframe-z1" layout-margin layout-padding >
+                        <span>.md-whiteframe-z1</span>
+                    </md-whiteframe>
+                    <md-whiteframe class="md-whiteframe-z2" layout-margin layout-padding >
+                        <span>.md-whiteframe-z2</span>
+                    </md-whiteframe>
+                    <md-whiteframe class="md-whiteframe-z3" layout-margin layout-padding >
+                        <span>.md-whiteframe-z3</span>
+                    </md-whiteframe>
+                    <md-whiteframe class="md-whiteframe-z4" layout-margin layout-padding >
+                        <span>.md-whiteframe-z4</span>
+                    </md-whiteframe>
+
+                </md-card-content>
+            </md-card>
+
+        </div>
+
+    </div>
+</div>

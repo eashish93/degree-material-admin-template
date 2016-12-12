@@ -1,0 +1,57 @@
+<div class="page page-ui-progress" ng-controller="ProgressDemoCtrl as vm">
+
+    <div layout-gt-sm="row">
+        <div flex-gt-sm="100">
+            <!-- colors -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Progress Circular</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+
+                <md-card-content>
+                    <p>
+                        This is an example of the <b>&lt;md-progress-circular&gt;</b> component.
+                    </p>
+                    <div layout="row" layout-sm="column" layout-align="space-around">
+                        <md-progress-circular ng-disabled="!vm.activated" class="md-hue-2" md-diameter="20px"></md-progress-circular>
+                        <md-progress-circular ng-disabled="!vm.activated" class="md-accent" md-diameter="40"></md-progress-circular>
+                        <md-progress-circular ng-disabled="!vm.activated" class="md-accent md-hue-1" md-diameter="60"></md-progress-circular>
+                        <md-progress-circular ng-disabled="!vm.activated" class="md-warn md-hue-3" md-diameter="70"></md-progress-circular>
+                        <md-progress-circular ng-disabled="!vm.activated" md-diameter="96"></md-progress-circular>
+                    </div>
+
+                </md-card-content>
+
+
+            </md-card>
+
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-subhead text-uppercase">Progress Linear</span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <div class="md-subhead"s>Determinate</div>
+                     <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+                     <br />
+                     <div class="md-subhead"s>Indeterminate</div>
+                     <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                     <br />
+                     <div class="md-subhead"s>Buffer</div>
+                     <md-progress-linear class="md-warn" md-mode="buffer" value="{{vm.determinateValue}}"
+                       md-buffer-value="{{vm.determinateValue2}}"
+                       ng-disabled="!vm.showList[0]"></md-progress-linear>
+                </md-card-content>
+            </md-card>
+
+        </div>
+    </div>
+
+</div>
