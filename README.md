@@ -11,4 +11,4 @@ Degree material design admin template is based on angular material framework. It
 ## Browser Support
 - All modern browsers (including IE10+,)
 
-## If you like it, then consider purchasing my premium (reactjs + bootstrap 4) admin template from themeforest : https://goo.gl/KKT4i3
+If you like it, then consider purchasing my premium (reactjs + bootstrap 4) admin template from themeforest : https://goo.gl/KKT4i3
